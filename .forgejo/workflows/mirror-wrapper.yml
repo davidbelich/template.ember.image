@@ -1,16 +1,13 @@
 name: Mirror (wrapper)
 
-# Choose the triggers you want.  This example mirrors on every push
-# and also lets you start it manually from the UI.
 on:
   push:
-    branches: [ "**" ]          # mirror on any branch push
-  workflow_dispatch: {}         # manual trigger
+    branches: ["**"]        # mirror on any branch push
+  workflow_dispatch: {}     # allow manual trigger
 
 jobs:
   call-central-mirror:
-    # 👉  Replace `your-account` with the actual owner of the central repo.
-    # 👉  The `@main` part pins the version – you can use a tag or SHA instead.
+    # Replace davidbelich with the correct account/org of central mirror workflow
     uses: davidbelich/central-mirror/.forgejo/workflows/mirror.yml@main
     with:
       gh-token:    ${{ secrets.GH_TOKEN }}
