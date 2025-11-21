@@ -1,0 +1,3 @@
+[submodule ".forgejo/workflows"]
+	path = .forgejo/workflows
+	url = ssh://git@codeberg.org/davidbelich/central-mirror.git
